@@ -6,10 +6,13 @@ from scrapy.selector import Selector
 class Shoping(scrapy.Spider):
     name = 'shop'
  
-    def __init__(self, keyword=None, page=1, *args, **kwargs):
+    def __init__(self, keyword='', page=1, *args, **kwargs):
         super(Shoping, self).__init__(*args, **kwargs)
-        self.start_urls = ['http://www.shopping.com/products~PG-'+str(page)+'?KW='+keyword]
-        
+        if keyword !='':
+            self.start_urls = ['http://www.shopping.com/products~PG-'+str(page)+'?KW='+keyword]
+        else :
+            print "Keyword is null redirecting to home page"
+            self.start_urls = ['http://www.shopping.com']
  
     def parse(self, response):
         hxs = Selector(response)
