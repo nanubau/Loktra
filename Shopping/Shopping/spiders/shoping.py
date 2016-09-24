@@ -11,7 +11,7 @@ class Shoping(scrapy.Spider):
         if keyword !='':
             self.start_urls = ['http://www.shopping.com/products~PG-'+str(page)+'?KW='+keyword]
         else :
-            print "Keyword is null redirecting to home page"
+            print "*************Keyword is null redirecting to home page*********************"
             self.start_urls = ['http://www.shopping.com']
  
     def parse(self, response):
@@ -26,17 +26,17 @@ class Shoping(scrapy.Spider):
 	       	valueString=hxs.xpath('//span[@class="numTotalResults"]/text()').extract()
 	       	print valueString
 	        if valueString == []:
-	        	print "No Page containing values"
+	        	print "*****************No Page containing values****************"
 	       	else :
 	    		# print type(i)
 	    		value= valueString[0]
 	    		start= value.index("of")
 	    		# end =value.index('\n')
 	    		item['totalCount']=value[start+2:]
-	    		print "Total results of the product "+str(item['totalCount'])
+	    		print "*****************Total results of the product***************"+str(item['totalCount'])
 
         except :
-         	print "Element not found"	
+         	print "******************Element not found****************"	
         '''
         	The div tag with attribute quicklookItem(regex quicklookItem ) inside 
         	form tag with attribute name equal to compareprd
@@ -46,4 +46,4 @@ class Shoping(scrapy.Spider):
        		item['pageCount']=len(hxs.xpath('//form[@name="compareprd"]/div[contains(@id,"quickLookItem")]'))
        		print "Total results on specified page "+str(item['pageCount'])
         except:
-        	 print "Form Element not found "
+        	 print "**************Form Element not found*******************"
