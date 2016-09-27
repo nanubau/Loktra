@@ -4,7 +4,37 @@ The files and folders contains the solutions of problems given by LOKTRA Team
 
 2.Directory Shopping contains the solution of https://github.com/Loktra/software-engineer/blob/master/Web%20Crawler.md
 
-Scrapy Framework is used for making the Crawler 
-Use command 
+
+
+Steps to install pip 
+
+Ubuntu
+Type Commands in terminal
+	sudo apt-get update && sudo apt-get -y upgrade
+	sudo apt-get install python-pip
+
+
+Steps to install scrapy
+
+Ubuntu
+
+Type Commands in terminal
+	pip install Scrapy
+
+Check if its installed using
+	scrapy version [-v]
+
+Testing Task "Python Crawler"
+	1. Open terminal and Type cd Loktra/Shopping/Shopping
+	2. Scrapy Framework is used for making the Crawler 
+	Use command 
 	scrapy crawl shop -a keyword=[String Value]
 	scrapy crawl shop -a keyword=[String Value] -a page=[Number]
+
+	example scrapy crawl shop -a keyword='handbags-and-wallets' -a page='2'
+               scrapy crawl shop -a keyword='handbags-and-wallets'
+               scrapy crawl shop 
+
+
+
+

@@ -4,8 +4,9 @@ from scrapy.selector import Selector
 # from scrapy.http import HtmlResponse
 
 class Shoping(scrapy.Spider):
-    name = 'shop'
- 
+    
+    name = 'shop' #name  of the crawler is shop
+     
     def __init__(self, keyword='', page=1, *args, **kwargs):
         super(Shoping, self).__init__(*args, **kwargs)
         if keyword !='':
@@ -33,7 +34,8 @@ class Shoping(scrapy.Spider):
 	    		start= value.index("of")
 	    		# end =value.index('\n')
 	    		item['totalCount']=value[start+2:]
-	    		print "*****************Total results of the product***************"+str(item['totalCount'])
+	    		print "*****************Total results of the product***************   "
+                print str(item['totalCount'])
 
         except :
          	print "******************Element not found****************"	
@@ -43,7 +45,7 @@ class Shoping(scrapy.Spider):
         	gives total items in the page specified
         '''
         try :
-       		item['pageCount']=len(hxs.xpath('//form[@name="compareprd"]/div[contains(@id,"quickLookItem")]'))
-       		print "Total results on specified page "+str(item['pageCount'])
+            item['pageCount']=len(hxs.xpath('//form[@name="compareprd"]/div[contains(@id,"quickLookItem")]'))
+            print "Total results on specified page "+str(item['pageCount'])
         except:
         	 print "**************Form Element not found*******************"
