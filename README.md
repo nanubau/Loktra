@@ -25,8 +25,14 @@ Check if its installed using
 	: scrapy version [-v]
 
 Testing Task "Python Crawler"
+	
+
 	1. Open terminal and Type cd Loktra/Shopping/Shopping
+	
+
 	2. Scrapy Framework is used for making the Crawler 
+	
+
 	Use command 
 	scrapy crawl shop -a keyword=[String Value]
 	scrapy crawl shop -a keyword=[String Value] -a page=[Number]
