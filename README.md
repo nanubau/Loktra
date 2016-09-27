@@ -19,12 +19,18 @@ Steps to install scrapy
 Ubuntu
 
 Type Commands in terminal
-	: pip install Scrapy
+	: 
+
+
+	pip install Scrapy
 
 Check if its installed using
-	: scrapy version [-v]
+	: 
 
-Testing Task "Python Crawler"
+
+	scrapy version [-v]
+
+How to test the Task "Python Crawler"
 	
 
 	1. Open terminal and Type cd Loktra/Shopping/Shopping
