@@ -37,6 +37,6 @@ Testing Task "Python Crawler"
 
 
 3 . uri.py is the program for https://github.com/Loktra/software-engineer/blob/master/Python%20Uri.md
-	Run the program and enter the uri
+	Run the program and enter the uri in string format
 
 

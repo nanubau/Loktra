@@ -1,4 +1,4 @@
-import re
+# import re
 def getScheme(uri):
 	try :
 		temp= uri.index(":")
@@ -29,13 +29,17 @@ def changeTLD(domainName):
 				
 				print 'uri is [ ' + scheme+'://'+'www.'+domainName+'.'+tld+' ]'	
 # 'http://stackoverflow.com/questions/24594351/python-regexp-to-check-if-string-is-tld-domain'
-uri = input("Enter the URI: ")
-temp= getScheme(uri)
-# temp1=temp.replace('//','')
-# # print temp1.split('.')
-# print temp1.split('/')
-domainName=getDomain(temp)
-changeTLD(domainName.split('.')[0].strip()) # when www is not present
-changeTLD(domainName.split('.')[1].strip()) # when wwww is present 
+try :
+	uri = str(input("Enter the URI in quotes as string format: "))
+	temp= getScheme(uri)
+	# temp1=temp.replace('//','')
+	# # print temp1.split('.')
+	# print temp1.split('/')
+	domainName=getDomain(temp)
+	changeTLD(domainName.split('.')[0].strip()) # when www is not present
+	changeTLD(domainName.split('.')[1].strip()) # when wwww is present 
+
+except:
+	print "not in string format"	
 
 
